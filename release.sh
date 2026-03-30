@@ -16,11 +16,18 @@ npm version "${VERSION}" --no-git-tag-version
 
 sed -i '' "s|^version:.*|version: ${VERSION}|" artifacthub-pkg.yml
 
+echo "==> Cleaning old tarballs..."
+rm -f *.tar.gz
+
 echo "==> Building and packaging..."
 npm run build
 npm run package
 
-ARCHIVE=$(ls *.tar.gz)
+ARCHIVE="headlamp-k8s-istio-${VERSION}.tar.gz"
+if [ ! -f "${ARCHIVE}" ]; then
+  echo "Error: expected ${ARCHIVE} not found"
+  exit 1
+fi
 CHECKSUM=$(shasum -a 256 "${ARCHIVE}" | awk '{print $1}')
 URL="https://github.com/${REPO}/releases/download/${TAG}/${ARCHIVE}"
 
