@@ -56,14 +56,13 @@ npm run test      # Run tests
 
 ## Releasing
 
-Push a tag to trigger the GitHub Actions release workflow:
+Requires [GitHub CLI](https://cli.github.com/) (`gh`) authenticated.
 
 ```bash
-git tag v0.2.0
-git push origin v0.2.0
+./release.sh 0.2.0
 ```
 
-The workflow builds, packages, creates a GitHub Release with the tarball, and updates `artifacthub-pkg.yml` with the download URL and checksum.
+The script bumps the version in `package.json` and `artifacthub-pkg.yml`, builds, packages, computes the checksum, commits, tags, pushes, and creates a GitHub Release with the tarball attached.
 
 ## License
 
