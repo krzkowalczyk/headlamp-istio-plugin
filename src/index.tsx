@@ -25,13 +25,16 @@ for (const config of RESOURCE_CONFIGS) {
     url: basePath,
   });
 
+  const ListComponent = config.listComponent ?? ResourceListPage;
+  const DetailComponent = config.detailComponent ?? ResourceDetailPage;
+
   registerRoute({
     path: basePath,
     sidebar: config.sidebarName,
     name: listRouteName,
     exact: true,
     component: () => (
-      <ResourceListPage
+      <ListComponent
         resourceClass={config.resourceClass}
         title={config.pluralLabel}
         detailRouteName={detailRouteName}
@@ -44,6 +47,6 @@ for (const config of RESOURCE_CONFIGS) {
     sidebar: config.sidebarName,
     name: detailRouteName,
     exact: true,
-    component: () => <ResourceDetailPage resourceClass={config.resourceClass} />,
+    component: () => <DetailComponent resourceClass={config.resourceClass} />,
   });
 }

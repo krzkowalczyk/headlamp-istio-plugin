@@ -1,7 +1,10 @@
 import { K8s } from '@kinvolk/headlamp-plugin/lib';
+import React from 'react';
+import { VirtualServiceDetailPage } from './components/virtualservice/VirtualServiceDetailPage';
+import { VirtualServiceListPage } from './components/virtualservice/VirtualServiceListPage';
+import * as Resources from './resources';
 
 type KubeObjectClass = (typeof K8s.cluster)['KubeObject'];
-import * as Resources from './resources';
 
 export interface ResourceConfig {
   label: string;
@@ -9,6 +12,8 @@ export interface ResourceConfig {
   sidebarName: string;
   resourceClass: KubeObjectClass;
   urlSegment: string;
+  listComponent?: React.ComponentType<{ resourceClass: KubeObjectClass; title: string; detailRouteName: string }>;
+  detailComponent?: React.ComponentType<{ resourceClass: KubeObjectClass }>;
 }
 
 export const RESOURCE_CONFIGS: ResourceConfig[] = [
@@ -19,6 +24,8 @@ export const RESOURCE_CONFIGS: ResourceConfig[] = [
     sidebarName: 'istio-virtualservices',
     resourceClass: Resources.VirtualService,
     urlSegment: 'virtualservices',
+    listComponent: VirtualServiceListPage,
+    detailComponent: VirtualServiceDetailPage,
   },
   {
     label: 'Destination Rule',

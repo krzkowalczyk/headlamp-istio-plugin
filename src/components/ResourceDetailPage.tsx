@@ -1,9 +1,9 @@
+import { K8s } from '@kinvolk/headlamp-plugin/lib';
 import {
   ConditionsTable,
   MainInfoSection,
   SectionBox,
 } from '@kinvolk/headlamp-plugin/lib/CommonComponents';
-import { K8s } from '@kinvolk/headlamp-plugin/lib';
 import { useParams } from 'react-router-dom';
 
 const { KubeObject } = K8s.cluster;
