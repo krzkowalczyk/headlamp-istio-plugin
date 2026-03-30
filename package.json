@@ -1,7 +1,9 @@
 {
-  "name": "headlamp-istio-plugin",
+  "name": "@headlamp-k8s/istio",
   "version": "0.1.0",
-  "description": "Your Headlamp plugin",
+  "description": "A UI for viewing and managing Istio service mesh resources in Headlamp",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/krzysztof/headlamp-istio-plugin",
   "scripts": {
     "start": "headlamp-plugin start",
     "build": "headlamp-plugin build",
@@ -19,9 +21,8 @@
     "headlamp",
     "headlamp-plugin",
     "kubernetes",
-    "kubernetes-ui",
-    "kubernetes-debugging",
-    "plugins"
+    "istio",
+    "service-mesh"
   ],
   "prettier": "@headlamp-k8s/eslint-config/prettier-config",
   "eslintConfig": {
