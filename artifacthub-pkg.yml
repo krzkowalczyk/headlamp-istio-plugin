@@ -4,7 +4,7 @@ displayName: Istio
 createdAt: "2026-03-30T00:00:00Z"
 description: A UI for viewing and managing Istio service mesh resources in Headlamp.
 annotations:
-  headlamp/plugin/archive-url: "https://github.com/krzkowalczyk/headlamp-istio-plugin/releases/download/istio-0.1.0/headlamp-k8s-istio-0.1.0.tar.gz"
+  headlamp/plugin/archive-url: "https://github.com/krzkowalczyk/headlamp-istio-plugin/releases/download/v0.1.0/headlamp-k8s-istio-0.1.0.tar.gz"
   headlamp/plugin/archive-checksum: "SHA256:PLACEHOLDER"
   headlamp/plugin/version-compat: ">=0.22"
   headlamp/plugin/distro-compat: in-cluster,web,docker-desktop,desktop

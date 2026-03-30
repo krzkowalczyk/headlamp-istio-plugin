@@ -59,8 +59,8 @@ npm run test      # Run tests
 Push a tag to trigger the GitHub Actions release workflow:
 
 ```bash
-git tag istio-0.2.0
-git push origin istio-0.2.0
+git tag v0.2.0
+git push origin v0.2.0
 ```
 
 The workflow builds, packages, creates a GitHub Release with the tarball, and updates `artifacthub-pkg.yml` with the download URL and checksum.
