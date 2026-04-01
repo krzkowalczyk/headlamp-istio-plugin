@@ -1,5 +1,6 @@
 import { K8s } from '@kinvolk/headlamp-plugin/lib';
 import {
+  CreateResourceButton,
   Link,
   SectionBox,
   SectionFilterHeader,
@@ -26,7 +27,7 @@ export function ResourceListPage({ resourceClass, title, detailRouteName }: Reso
   }
 
   return (
-    <SectionBox title={<SectionFilterHeader title={title} />}>
+    <SectionBox title={<SectionFilterHeader title={title} titleSideActions={[<CreateResourceButton resourceClass={resourceClass} />]} />}>
       <Table
         data={resources}
         columns={[
