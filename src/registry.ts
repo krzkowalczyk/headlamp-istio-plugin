@@ -1,5 +1,6 @@
 import { K8s } from '@kinvolk/headlamp-plugin/lib';
 import React from 'react';
+import { AuthorizationPolicyDetailPage } from './components/authorizationpolicy/AuthorizationPolicyDetailPage';
 import { VirtualServiceDetailPage } from './components/virtualservice/VirtualServiceDetailPage';
 import { VirtualServiceListPage } from './components/virtualservice/VirtualServiceListPage';
 import * as Resources from './resources';
@@ -97,6 +98,7 @@ export const RESOURCE_CONFIGS: ResourceConfig[] = [
     sidebarName: 'istio-authorizationpolicies',
     resourceClass: Resources.AuthorizationPolicy,
     urlSegment: 'authorizationpolicies',
+    detailComponent: AuthorizationPolicyDetailPage,
   },
   // Telemetry
   {
